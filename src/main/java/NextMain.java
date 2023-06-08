@@ -18,6 +18,14 @@ public class NextMain {
         var plane = new Comedy("AirPlane");
         plane.watchComedy();
 
-
+        Object unknownObject = Movie.getMovie("c", "Airplane");
+        if (unknownObject.getClass().getSimpleName() == "Comedy") {
+            Comedy c = (Comedy) unknownObject;
+            c.watchComedy();
+        } else if (unknownObject instanceof Adventure) {
+            ((Adventure) unknownObject).watchAdventure();
+        } else if (unknownObject instanceof  ScienceFiction syfy) { // pattern matching
+            syfy.watchScienceFiction();
+        }
     }
 }
